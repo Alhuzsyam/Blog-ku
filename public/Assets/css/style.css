@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* overflow: scroll; */
+}
+
+.mscroll {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: #11101d;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+.sidebar.active {
+    width: 240px;
+}
+.sidebar.active .logo-content .logo {
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+.sidebar .logo-content .logo {
+    opacity: 0;
+    pointer-events: none;
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+.logo_content .logo i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+.logo_content .logo .logo_name {
+    font-size: 20px;
+    font-weight: 400;
+}
+.sidebar.active #btn {
+    left: 90%;
+}
+.sidebar #btn {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+
+.sidebar ul {
+    margin-top: 20px;
+}
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #fff;
+}
+
+.sidebar ul li i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+.sidebar ul li input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    left: 0;
+    top: 0;
+    outline: none;
+    border: none;
+    background: #1d1b32;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+.sidebar ul li .bx-search {
+    position: absolute;
+    z-index: 100;
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.5 ease;
+}
+.sidebar ul li .bx-search:hover {
+    background: #fff;
+    color: #1d1b32;
+}
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+.sidebar ul li .tooltip {
+    display: block;
+    position: absolute;
+    left: 60px;
+    top: 0;
+    transform: translateY(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 2);
+    transition: 0s;
+    opacity: 0;
+}
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    top: 15%;
+    opacity: 1;
+}
+.sidebar .profile_content {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.4 ease;
+}
+.sidebar.active .profile_content .profile {
+    background: #1e1c32;
+}
+.sidebar .profile_content .profile {
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.4 ease;
+}
+.profile_content .profile .profile_details {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.profile .profile_details img {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.sidebar.active .profile .profile_details {
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile_details .name_job {
+    margin-left: 10px;
+}
+.profile .profile_details .name {
+    font-size: 15px;
+    font-weight: 400;
+}
+.profile .profile_details .job {
+    font-size: 12px;
+}
+.sidebar.active .profile #log_out {
+    background: none;
+}
+.profile #log_out {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: #1d1b32;
+}
+
+.sidebar.active .profile #log_out {
+    left: 88%;
+}
+
+.home_content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+    padding: 15px;
+}
+.sidebar.active ~ .home_content {
+    width: calc(100%-240px);
+    left: 240px;
+}
+.home_content .text {
+    font-size: 25px;
+    font-weight: 500;
+    color: #1d1b32;
+}
+
+.sidebar.active .link_name {
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar .link_name {
+    opacity: 0;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+
+/* Boxes */
+.boxes {
+    color: white !important;
+    border-radius: 12px;
+}
+/* color */
+.bprimary {
+    background-color: #11111d !important;
+}
+.tsecondary {
+    color: #bdc3c7 !important;
+}
+.bsecondary {
+    background-color: #34495e !important;
+}
+
+@media (min-width: 770px) {
+    .imp {
+        float: right;
+    }
+}
+@media (max-width: 770px) {
+    .dog {
+        display: none;
+    }
+}
+/* @media (max-width: 770px) {
+    .mbtn {
+        float: left;
+    }
+} */
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background: #11101d00 !important;
+    font-weight: bold;
+    color: #11101d !important;
+}
+
+.bactive {
+    background: white;
+    color: black !important;
+}
+
+/* login style */
+
+body {
+    background: #353b48;
+}
+.row {
+    background: f5f6fa;
+}
+.content {
+    margin: 8%;
+}
+.imgback {
+    height: 600px;
+    /* background: red; */
+}
+.person {
+    width: 300px;
+    float: right;
+}
+.textwhite {
+    color: #fff !important;
+}
+.textgray {
+    color: #f5f6fa !important;
+}
+
+.dog {
+    margin-top: 100px;
+    width: 150px;
+    float: right;
+}
+.fback {
+    height: 600px;
+    width: 18rem;
+    /* background: red; */
+}
+.line {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    left: 0;
+    right: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@media (min-width: 992px) {
+    .navbar-brand,
+    .nav-link,
+    .titlehead {
+        color: white !important;
+    }
+    .nav-link {
+        margin-right: 10px;
+        text-transform: uppercase;
+    }
+    .nav-link:hover::after {
+        content: "";
+        display: block;
+        border-bottom: 3px solid var(--orange);
+        margin: auto;
+        margin-bottom: -8px;
+        padding-bottom: 5px;
+        width: 50%;
+    }
+    .jumbotrons {
+        margin-top: -60px;
+    }
+}
+
+* {
+    font-family: Poppins, sans-serif;
+}
+.navbar-brand {
+    font-weight: 500;
+    font-family: Poppins, sans-serif;
+    font-size: 100px;
+}
+.jumbotrons {
+    background-image: url("../img/header.png");
+    background-size: cover;
+    height: 640px;
+}
+.navbar-brand,
+.titlehead {
+    color: white;
+}
+.tombol {
+    border-radius: 50px !important;
+    text-transform: uppercase;
+    background: var(--orange) !important;
+    border-color: var(--orange) !important;
+    color: white;
+}
+.tombol:hover {
+    color: rgb(0, 0, 0);
+}
+.info-panel {
+    background-color: var(--orange);
+    height: 80px;
+    border-radius: 15px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+        0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+        0 16px 16px rgba(0, 0, 0, 0.12);
+    margin-top: -70px;
+}
+.box {
+    width: 40px;
+    height: 40px;
+    background: white;
+}

@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  nginx:
+    container_name: Webserverv01
+    # lokasi source code
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    # path untuk source di dalam docker
+    volumes:
+      - ./:/var/www
+    image: webserver_laravel:1.0
+    ports:
+      - "8070:80"
+  app:
+    container_name: Laravelv01
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    image: app_laravel:1.0
+    volumes:
+      - ./:/var/www
