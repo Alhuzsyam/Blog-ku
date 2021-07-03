@@ -1,4 +1,4 @@
-# DOCKER CONFIG FOR LARAVEL
+# DOCKER CONFIG UNTUK LARAVEL
 
 Root folder information
 
@@ -22,3 +22,7 @@ LARAVEL
  $ docker-compose up -d 
 
 ```
+## Database 
+Database terdapat pada file db atau menggunakan fitur migrate pada laravel
+$ php artisan migrate
+
