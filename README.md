@@ -19,10 +19,15 @@ LARAVEL
 ## automatic create a image for app (source code image) & web (webserver config image)
 
 ```
- $ docker-compose up -d 
+ $ docker-compose up -d
 
 ```
-## Database 
+
+## Database
+
 Database terdapat pada file db atau menggunakan fitur migrate pada laravel
+
+```
 $ php artisan migrate
 
+```
