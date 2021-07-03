@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', 'MainController@index');
+Route::get('/test', 'MainController@test');
 Route::get('/login', 'LoginController@index')->name('login');
 Route::get('/register', 'RegisterController@index');
 Route::post('/register', 'RegisterController@store');
 Route::post('/loginpost', 'LoginController@loginpost');
 Route::get('/logout', 'LoginController@logout');
+Route::get('/content/detail/{id}', 'DetailController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     // Route::get('/index', 'DashboardController@index');

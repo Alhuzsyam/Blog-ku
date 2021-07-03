@@ -25,13 +25,17 @@ class MainController extends Controller
         $article = Content::orderBy('id', 'DESC')->get();
         // return $content;
         return view(
-            'main/main',
+            'main/content',
             [
                 'users' => $users,
                 'content' => $content,
                 'articles' => $article
             ]
         );
+    }
+    public function test()
+    {
+        return "HAI";
     }
 
     /**
